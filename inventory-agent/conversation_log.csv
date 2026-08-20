@@ -1,0 +1,39 @@
+actor,message,tool_call,timestampuser,que productos tenemos,,2026-08-19T23:59:13+00:00
+agent,{},list_inventory,2026-08-19T23:59:14+00:00
+tool,"[{""id"": 1, ""name"": ""Leche de avena"", ""quantity"": 18.0, ""unit"": ""unidades""}, {""id"": 2, ""name"": ""Café arábica"", ""quantity"": 40.0, ""unit"": ""bolsas""}, {""id"": 3, ""name"": ""Vasos térmicos"", ""quantity"": 7.0, ""unit"": ""paquetes""}]",list_inventory,2026-08-19T23:59:14+00:00
+agent,"Tenemos los siguientes productos en el inventario:
+
+| ID | Producto           | Cantidad | Unidad     |
+|----|--------------------|----------|------------|
+| 1  | Leche de avena     | 18       | unidades   |
+| 2  | Café arábica       | 40       | bolsas     |
+| 3  | Vasos térmicos     | 7        | paquetes   |
+
+¿Necesitas algo más?",,2026-08-19T23:59:14+00:00
+user,vendí 2 bosas de arabica,,2026-08-19T23:59:26+00:00
+agent,"{""delta"": -2, ""product_id"": 2}",update_stock,2026-08-19T23:59:26+00:00
+tool,"{""id"": 2, ""name"": ""Café arábica"", ""quantity"": 38.0, ""unit"": ""bolsas""}",update_stock,2026-08-19T23:59:26+00:00
+agent,Se actualizó el stock. Ahora el café arábica tiene 38 bolsas.,,2026-08-19T23:59:26+00:00
+user,llegaron 35 bolsas de cafe colombiano,,2026-08-20T00:00:34+00:00
+agent,"{""name"": ""Café colombiano"", ""quantity"": 35, ""unit"": ""bolsas""}",create_product,2026-08-20T00:00:34+00:00
+tool,"{""id"": 4, ""name"": ""Café colombiano"", ""quantity"": 35.0, ""unit"": ""bolsas""}",create_product,2026-08-20T00:00:34+00:00
+agent,"Se añadió el producto ""Café colombiano"" con 35 bolsas al inventario.",,2026-08-20T00:00:35+00:00
+user,cual es el stock de café,,2026-08-20T00:00:50+00:00
+agent,{},list_inventory,2026-08-20T00:00:50+00:00
+tool,"[{""id"": 1, ""name"": ""Leche de avena"", ""quantity"": 18.0, ""unit"": ""unidades""}, {""id"": 2, ""name"": ""Café arábica"", ""quantity"": 38.0, ""unit"": ""bolsas""}, {""id"": 3, ""name"": ""Vasos térmicos"", ""quantity"": 7.0, ""unit"": ""paquetes""}, {""id"": 4, ""name"": ""Café colombiano"", ""quantity"": 35.0, ""unit"": ""bolsas""}]",list_inventory,2026-08-20T00:00:50+00:00
+agent,"El stock de los productos de café es:
+
+- Café arábica: 38 bolsas  
+- Café colombiano: 35 bolsas
+
+Total de café: 73 bolsas.",,2026-08-20T00:00:51+00:00
+user,vendi 2 cafe,,2026-08-20T00:01:02+00:00
+agent,¿Te refieres a vender 2 unidades de Café arábica o 2 unidades de Café colombiano? Por favor indícame el producto exacto para actualizar el stock.,,2026-08-20T00:01:02+00:00
+user,colombiano,,2026-08-20T00:01:12+00:00
+agent,"{""delta"": -2, ""product_id"": 4}",update_stock,2026-08-20T00:01:12+00:00
+tool,"{""id"": 4, ""name"": ""Café colombiano"", ""quantity"": 33.0, ""unit"": ""bolsas""}",update_stock,2026-08-20T00:01:12+00:00
+agent,Se actualizó el stock: Café colombiano ahora tiene 33 bolsas.,,2026-08-20T00:01:12+00:00
+user,cual es el stock de palomas,,2026-08-20T00:03:09+00:00
+agent,{},list_inventory,2026-08-20T00:03:09+00:00
+tool,"[{""id"": 1, ""name"": ""Leche de avena"", ""quantity"": 18.0, ""unit"": ""unidades""}, {""id"": 2, ""name"": ""Café arábica"", ""quantity"": 38.0, ""unit"": ""bolsas""}, {""id"": 3, ""name"": ""Vasos térmicos"", ""quantity"": 7.0, ""unit"": ""paquetes""}, {""id"": 4, ""name"": ""Café colombiano"", ""quantity"": 33.0, ""unit"": ""bolsas""}]",list_inventory,2026-08-20T00:03:09+00:00
+agent,"No tenemos un producto llamado “palomas” en el inventario. Si necesitas agregarlo, avísame y lo crearé.",,2026-08-20T00:03:10+00:00
